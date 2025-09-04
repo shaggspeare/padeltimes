@@ -3,13 +3,25 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
-    subsets: ["latin", "cyrillic"],
+    subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-    title: "PadelTime — Всі падел корти Києва",
-    description: "Розклад та доступність падел кортів у Києві. Бронювання кортів у RSP, Rejo, PadelBaza, GrandPrix та інших.",
-    keywords: "падел, padel, київ, корти, бронювання, розклад",
+    title: "PadelTime — All Padel Courts in Warsaw",
+    description: "Schedule and availability of padel courts in Warsaw. Book courts at We Are Padel, Padlovnia, Warsaw Padel Club, InterPadel and others.",
+    keywords: "padel, Warsaw, courts, booking, schedule, tennis",
+    openGraph: {
+        title: "PadelTime Warsaw — All Padel Courts",
+        description: "Find and book padel courts in Warsaw. Real-time availability and schedules.",
+        type: "website",
+        locale: "en_US",
+    },
+    alternates: {
+        languages: {
+            'en': '/en',
+            'pl': '/pl',
+        },
+    },
 };
 
 export default function RootLayout({
@@ -18,7 +30,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="uk">
+        <html lang="en">
         <body className={`${inter.className} antialiased`}>
         {children}
         </body>

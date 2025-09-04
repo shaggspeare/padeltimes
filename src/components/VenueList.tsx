@@ -1,14 +1,16 @@
-import { Venue } from '@/types';
+import { Venue, Language } from '@/types';
+import { getTranslation } from '@/lib/translations';
 
 interface VenueListProps {
     venues: Venue[];
+    language: Language;
 }
 
-export default function VenueList({ venues }: VenueListProps) {
+export default function VenueList({ venues, language }: VenueListProps) {
     return (
         <div className="mt-12">
-            <h2 className="text-2xl font-bold mb-6">Де можна пограти в Падел-теніс?</h2>
-            <p className="text-gray-600 mb-8">Дивись адреси найкращих падел кортів Києва</p>
+            <h2 className="text-2xl font-bold mb-6">{getTranslation('venueListTitle', language)}</h2>
+            <p className="text-gray-600 mb-8">{getTranslation('venueListDescription', language)}</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {venues.map((venue) => (
@@ -32,7 +34,19 @@ export default function VenueList({ venues }: VenueListProps) {
                             <h3 className="font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">
                                 {venue.description || venue.name}
                             </h3>
-                            <p className="text-sm text-gray-500 mt-1">{venue.courts.length} кортів</p>
+                            <p className="text-sm text-gray-500 mt-1">
+                                {venue.courts.length} {getTranslation('courts', language)}
+                            </p>
+                            {venue.address && (
+                                <p className="text-xs text-gray-400 mt-1">
+                                    📍 {venue.address}
+                                </p>
+                            )}
+                            {venue.phone && (
+                                <p className="text-xs text-gray-400 mt-1">
+                                    📞 {venue.phone}
+                                </p>
+                            )}
                         </div>
                     </a>
                 ))}

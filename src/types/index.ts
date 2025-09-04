@@ -12,6 +12,8 @@ export interface Venue {
     image?: string;
     link?: string;
     description?: string;
+    address?: string;
+    phone?: string;
 }
 
 export interface TimeSlot {
@@ -29,4 +31,12 @@ export interface DaySchedule {
             slots: TimeSlot[];
         }[];
     }[];
+}
+
+export type Language = 'en' | 'pl';
+
+export interface Translations {
+    [key: string]: {
+        [key in Language]: string;
+    };
 }

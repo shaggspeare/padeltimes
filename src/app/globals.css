@@ -45,3 +45,87 @@ body {
   background: linear-gradient(to right, rgba(0,0,0,0.1), transparent);
   pointer-events: none;
 }
+
+/* Enhanced table hover effects */
+table tbody tr:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+table td {
+  transition: all 0.2s ease;
+}
+
+table td:hover {
+  transform: scale(1.05);
+  z-index: 10;
+  position: relative;
+  border-color: #3b82f6;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+/* Language switcher animation */
+button {
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+/* Venue card animations */
+.group:hover .aspect-video {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+.group .aspect-video {
+  transition: transform 0.3s ease;
+}
+
+/* Loading animation for schedule updates */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  table {
+    font-size: 0.875rem;
+  }
+
+  .sticky {
+    min-width: 60px;
+  }
+}
+
+/* Better focus states for accessibility */
+button:focus,
+a:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  header, footer {
+    display: none;
+  }
+
+  .bg-gray-50 {
+    background: white !important;
+  }
+
+  .shadow-lg {
+    box-shadow: none !important;
+  }
+}

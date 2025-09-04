@@ -1,98 +1,107 @@
-import { Venue, DaySchedule } from '@/types';
+import { Venue, DaySchedule, Language } from '@/types';
+import { dayNames, monthNames } from './translations';
 
 export const venues: Venue[] = [
     {
-        id: 'rsp-kyoto',
-        name: 'RSP Kyoto',
-        image: '/img/location1.jpg',
-        link: 'https://racketsportspark.kyiv.ua/',
-        description: 'Racket Sports Park KYOTO',
+        id: 'we-are-padel',
+        name: 'We Are Padel Warsaw',
+        description: 'Modern padel club in the heart of Warsaw',
+        address: 'Marszałkowska 84/92, 00-514 Warsaw',
+        link: 'https://wearepadel.pl/',
         courts: [
-            { id: 'k1', name: 'Корт 1', shortName: '1' },
-            { id: 'k2', name: 'Корт 2', shortName: '2' },
-            { id: 'k3', name: 'Корт 3', shortName: '3' },
-            { id: 'k4', name: 'Корт 4', shortName: '4' },
-            { id: 'k5', name: 'Корт 5', shortName: '5' },
-            { id: 'kvip1', name: 'VIP Корт 1', shortName: 'VIP1' },
-            { id: 'kvip2', name: 'VIP Корт 2', shortName: 'VIP2' },
+            { id: 'wap1', name: 'Court 1', shortName: '1' },
+            { id: 'wap2', name: 'Court 2', shortName: '2' },
+            { id: 'wap3', name: 'Court 3', shortName: '3' },
+            { id: 'wap4', name: 'Court 4', shortName: '4' },
         ],
     },
     {
-        id: 'rsp-nyvky',
-        name: 'RSP Nyvky',
-        image: '/img/location8.jpg',
-        link: 'https://racketsportspark.kyiv.ua/',
-        description: 'Racket Sports Park NYVKY',
+        id: 'padlovnia',
+        name: 'Padlovnia',
+        description: 'Most modern padel club in Poland',
+        address: 'Wał Miedzeszyński 389, 03-994 Warsaw',
+        link: 'https://padlovnia.pl/',
+        phone: '+48 22 499 99 00',
         courts: [
-            { id: 'n1', name: 'Корт 1', shortName: '1' },
-            { id: 'n2', name: 'Корт 2', shortName: '2' },
-            { id: 'n3', name: 'Корт 3', shortName: '3' },
+            { id: 'pad1', name: 'Court 1', shortName: '1' },
+            { id: 'pad2', name: 'Court 2', shortName: '2' },
+            { id: 'pad3', name: 'Court 3', shortName: '3' },
+            { id: 'pad4', name: 'Court 4', shortName: '4' },
+            { id: 'pad5', name: 'Court 5', shortName: '5' },
+            { id: 'pad6', name: 'Court 6', shortName: '6' },
+            { id: 'pad7', name: 'Court 7', shortName: '7' },
+            { id: 'pad8', name: 'Court 8', shortName: '8' },
         ],
     },
     {
-        id: 'padelbaza',
-        name: 'PadelBaza',
-        image: '/img/location3.jpg',
-        link: 'https://padelbaza.com/',
-        description: 'PadelBaza — Олімпійський центр',
+        id: 'warsaw-padel-club',
+        name: 'Warsaw Padel Club',
+        description: 'Premium padel experience',
+        address: 'Annopol 3, Hala DC1, 03-236 Warsaw',
+        link: 'https://www.warsawpadelclub.pl/',
+        phone: '+48 602 500 498',
         courts: [
-            { id: 'pa', name: 'Корт А', shortName: 'А' },
-            { id: 'pb', name: 'Корт B', shortName: 'B' },
-            { id: 'pc', name: 'Корт С', shortName: 'С' },
-            { id: 'pd', name: 'Корт D', shortName: 'D' },
-            { id: 'pv1', name: 'Вулиця 1', shortName: 'Вул1' },
-            { id: 'pv2', name: 'Вулиця 2', shortName: 'Вул2' },
+            { id: 'wpc1', name: 'Court 1', shortName: '1' },
+            { id: 'wpc2', name: 'Court 2', shortName: '2' },
+            { id: 'wpc3', name: 'Court 3', shortName: '3' },
         ],
     },
     {
-        id: 'rejo-vdng',
-        name: 'Rejo ВДНГ',
-        image: '/img/location2.jpg',
-        link: 'https://rejo.ua/ua/padel-tennis/rejo-polyot1/',
-        description: 'REJO-ВДНГ',
+        id: 'interpadel-warszawa',
+        name: 'InterPadel Warszawa',
+        description: 'Professional padel facilities',
+        address: 'Bokserska 66a, 02-690 Warsaw',
+        link: 'https://interpadel.pl/',
+        phone: '+48 734 433 772',
         courts: [
-            { id: 'rv1', name: 'Корт 1', shortName: '1' },
-            { id: 'rv2', name: 'Корт 2', shortName: '2' },
-            { id: 'rv3', name: 'Корт 3', shortName: '3' },
-            { id: 'rv4', name: 'Корт 4', shortName: '4' },
-            { id: 'rv5', name: 'Корт 5', shortName: '5' },
-            { id: 'rv6', name: 'Корт 6', shortName: '6' },
+            { id: 'ip1', name: 'Court 1', shortName: '1' },
+            { id: 'ip2', name: 'Court 2', shortName: '2' },
+            { id: 'ip3', name: 'Court 3', shortName: '3' },
+            { id: 'ip4', name: 'Court 4', shortName: '4' },
         ],
     },
     {
-        id: 'rejo-obolon',
-        name: 'Rejo Оболонь',
-        image: '/img/location7.jpg',
-        link: 'https://rejo.ua/ua/padel-tennis/obolon/',
-        description: 'REJO-Оболонь',
+        id: 'wkt-mera',
+        name: 'WKT Mera',
+        description: 'Warsaw Tennis Club Mera',
+        address: 'al. Bohaterów Września 12, 02-389 Warsaw',
+        link: 'https://wkt-mera.pl/',
+        phone: '+48 22 822 93 82',
         courts: [
-            { id: 'ro1', name: 'Корт 1', shortName: '1' },
-            { id: 'ro2', name: 'Корт 2', shortName: '2' },
-            { id: 'ro3', name: 'Корт 3', shortName: '3' },
+            { id: 'mera1', name: 'Court 1', shortName: '1' },
+            { id: 'mera2', name: 'Court 2', shortName: '2' },
         ],
     },
     {
-        id: 'grandprix',
-        name: 'GrandPrix',
-        image: '/img/location4.jpg',
-        link: 'https://ua.grand-prix.ua/',
-        description: 'GrandPrix Evolution',
+        id: 'garden-club',
+        name: 'Garden Club',
+        description: 'Sports & Health Club Konstancin',
+        address: 'Konstancin-Jeziorna (near Warsaw)',
+        link: 'https://garden-club.pl/',
         courts: [
-            { id: 'g1', name: 'Корт 1', shortName: '1' },
-            { id: 'g2', name: 'Корт 2', shortName: '2' },
-            { id: 'g3', name: 'Корт 3', shortName: '3' },
+            { id: 'gc1', name: 'Court 1', shortName: '1' },
+            { id: 'gc2', name: 'Court 2', shortName: '2' },
         ],
     },
     {
-        id: 'club22',
-        name: 'Club22.Unit',
-        image: '/img/location6.jpg',
-        link: 'https://22club.unit.city/',
-        description: 'Club22.Unit',
+        id: 'decathlon-targowek',
+        name: 'Decathlon Targówek',
+        description: 'Padel courts at Decathlon',
+        address: 'Geodezyjna 76, 03-290 Warsaw',
+        link: 'https://www.decathlon.pl/',
         courts: [
-            { id: 'c2', name: 'Корт 2', shortName: '2' },
-            { id: 'c1', name: 'Корт 1', shortName: '1' },
-            { id: 'c3', name: 'Корт 3', shortName: '3' },
+            { id: 'dec1', name: 'Court 1', shortName: '1' },
+            { id: 'dec2', name: 'Court 2', shortName: '2' },
+        ],
+    },
+    {
+        id: 'padel4all-vistula',
+        name: 'Padel4All Vistula',
+        description: 'Outdoor court by the Vistula River',
+        address: 'Gen. George Smith Patton Boulevard, Warsaw',
+        link: 'https://bestofwarsaw.pl/',
+        courts: [
+            { id: 'vis1', name: 'Court 1', shortName: '1' },
         ],
     },
 ];
@@ -103,20 +112,20 @@ const timeSlots = [
     '19:00', '20:00', '21:00', '22:00',
 ];
 
-export function generateScheduleForWeek(): DaySchedule[] {
+export function generateScheduleForWeek(language: Language = 'en'): DaySchedule[] {
     const schedule: DaySchedule[] = [];
     const today = new Date();
-    const ukrainianDays = ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П\'ятниця', 'Субота'];
-    const ukrainianMonths = ['січня', 'лютого', 'березня', 'квітня', 'травня', 'червня',
-        'липня', 'серпня', 'вересня', 'жовтня', 'листопада', 'грудня'];
 
     for (let i = 0; i < 7; i++) {
         const currentDate = new Date(today);
         currentDate.setDate(today.getDate() + i);
 
+        const dayName = dayNames[language][currentDate.getDay()];
+        const monthName = monthNames[language][currentDate.getMonth()];
+
         const daySchedule: DaySchedule = {
             date: currentDate,
-            dayName: `${ukrainianDays[currentDate.getDay()]}, ${currentDate.getDate()} ${ukrainianMonths[currentDate.getMonth()]}`,
+            dayName: `${dayName}, ${currentDate.getDate()} ${monthName}`,
             venues: venues.map(venue => ({
                 venue,
                 courtsAvailability: venue.courts.map(court => ({
